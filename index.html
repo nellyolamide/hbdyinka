@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy Birthday To My Gay Friend Yinka! 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .birthday-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+
+        .age-display {
+            font-size: 2em;
+            color: #fff;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cake-button {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cake-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cake-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: explode 1s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                opacity: 1;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(2);
+            }
+        }
+
+        .birthday-message {
+            color: white;
+            font-size: 1.3em;
+            margin: 20px 0;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .candles {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+
+        .candle {
+            width: 8px;
+            height: 40px;
+            background: linear-gradient(to bottom, #ff6b6b, #feca57);
+            border-radius: 4px;
+            position: relative;
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        .candle::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 8px;
+            background: radial-gradient(circle, #ff6b35, #f7931e);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flame 1s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { transform: rotate(-1deg); }
+            100% { transform: rotate(1deg); }
+        }
+
+        @keyframes flame {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1); }
+        }
+
+        .wish-counter {
+            color: white;
+            font-size: 1.1em;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+
+        .audio-status {
+            color: white;
+            font-size: 0.9em;
+            margin-top: 10px;
+            opacity: 0.7;
+        }
+
+        .photo-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            flex-direction: column;
+        }
+
+        .photo-modal img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .photo-modal .close-btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .error-message {
+            text-align: center;
+            color: white;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fireworks" id="fireworks"></div>
+    
+    <div class="birthday-container">
+        <h1>🎉 HAPPY BIRTHDAY TO
+             MY GAY FRIEND 
+             YINKA! 🎉</h1>
+        
+        <div class="candles" id="candles">
+           
+        </div>
+        
+        <div class="age-display" id="ageDisplay">
+            Another year of awesomeness! 🌟
+        </div>
+        
+        <div class="birthday-message">
+            <p>Today I celebrate YOU! 🎈</p>
+            <p>May this new year bring you joy, adventure, and all the big yansh you can accumulate! 🍰</p>
+            <p>You're not getting older, you're getting better! Get a man this year If you don't want to identify as GAY ✨</p>
+        </div>
+        
+       
+        <button class="cake-button" onclick="showPhoto()">📸 View Photo!</button>
+        <button class="cake-button" onclick="makeWish()">🎂 Make a Wish sharp sharp!</button>
+        <button class="cake-button" onclick="launchFireworks()">🎆 Celebrate!</button>
+        <button class="cake-button" id="songButton" onclick="playBirthdaySong()">🎵 Birthday Song</button>
+        
+        <div class="wish-counter" id="wishCounter">
+            Wishes made: 0 ✨
+        </div>
+        
+        <div class="audio-status" id="audioStatus">
+            Ready to play music! 🎶
+        </div>
+    </div>
+
+    <script>
+        let wishCount = 0;
+        let birthdayAudio = null;
+        let audioLoaded = false;
+
+        // Simple test function
+        function testFunction() {
+            alert('JavaScript is working perfectly!');
+        }
+
+        // Show photo function - simple and clean
+        function showPhoto() {
+            var modal = document.createElement('div');
+            modal.className = 'photo-modal';
+            
+            var img = document.createElement('img');
+            img.src = 'yinka_photo.jpg';
+            
+            var closeBtn = document.createElement('button');
+            closeBtn.className = 'close-btn';
+            closeBtn.innerHTML = 'Close';
+            closeBtn.onclick = function() {
+                document.body.removeChild(modal);
+            };
+            
+            img.onerror = function() {
+                var errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.innerHTML = '<h2>📸 Photo Not Found</h2><p>Make sure "yinka_photo.jpg" is in the same folder as this HTML file!</p>';
+                modal.appendChild(errorDiv);
+                modal.appendChild(closeBtn);
+            };
+            
+            img.onload = function() {
+                modal.appendChild(img);
+                modal.appendChild(closeBtn);
+            };
+            
+            modal.onclick = function(e) {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                }
+            };
+            
+            document.body.appendChild(modal);
+        }
+
+        // Initialize audio
+        function initializeAudio() {
+            try {
+                birthdayAudio = new Audio('Mygay.mp3');
+                birthdayAudio.preload = 'auto';
+                
+                birthdayAudio.addEventListener('canplaythrough', function() {
+                    audioLoaded = true;
+                    document.getElementById('audioStatus').innerHTML = 'Audio ready! 🎶';
+                    document.getElementById('songButton').disabled = false;
+                });
+                
+                birthdayAudio.addEventListener('error', function(e) {
+                    document.getElementById('audioStatus').innerHTML = 'Audio file not found. Make sure Mygay.mp3 is in the same folder! ⚠️';
+                    document.getElementById('songButton').disabled = true;
+                });
+                
+                birthdayAudio.addEventListener('ended', function() {
+                    document.getElementById('songButton').innerHTML = '🎵 Play Again';
+                    document.getElementById('audioStatus').innerHTML = 'Song finished! 🎶';
+                });
+                
+                birthdayAudio.addEventListener('play', function() {
+                    document.getElementById('songButton').innerHTML = '⏸️ Pause Song';
+                    document.getElementById('audioStatus').innerHTML = 'Now playing your birthday song! 🎵';
+                });
+                
+                birthdayAudio.addEventListener('pause', function() {
+                    document.getElementById('songButton').innerHTML = '▶️ Resume Song';
+                    document.getElementById('audioStatus').innerHTML = 'Song paused 🎶';
+                });
+                
+            } catch (error) {
+                document.getElementById('audioStatus').innerHTML = 'Error loading audio ❌';
+            }
+        }
+
+        // Generate random number of candles
+        function generateCandles() {
+            var candleContainer = document.getElementById('candles');
+            var numCandles = Math.floor(Math.random() * 40) + 10;
+            
+            for (var i = 0; i < numCandles; i++) {
+                var candle = document.createElement('div');
+                candle.className = 'candle';
+                candle.style.animationDelay = (i * 0.1) + 's';
+                candleContainer.appendChild(candle);
+            }
+            
+            document.getElementById('ageDisplay').innerHTML = '🎂  Candles! 🎂';
+        }
+
+        // Create fireworks effect
+        function launchFireworks() {
+            var fireworksContainer = document.getElementById('fireworks');
+            var colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff'];
+            
+            for (var i = 0; i < 20; i++) {
+                setTimeout(function() {
+                    var firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.style.left = Math.random() * 100 + '%';
+                    firework.style.top = Math.random() * 100 + '%';
+                    firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    firework.style.boxShadow = '0 0 10px ' + colors[Math.floor(Math.random() * colors.length)];
+                    
+                    fireworksContainer.appendChild(firework);
+                    
+                    setTimeout(function() {
+                        if (firework.parentNode) {
+                            firework.parentNode.removeChild(firework);
+                        }
+                    }, 1000);
+                }, i * 100);
+            }
+        }
+
+        // Make a wish function
+        function makeWish() {
+            wishCount++;
+            document.getElementById('wishCounter').innerHTML = 'Wishes made: ' + wishCount + ' ✨';
+            
+            var candles = document.querySelectorAll('.candle');
+            for (var i = 0; i < candles.length; i++) {
+                setTimeout(function(index) {
+                    return function() {
+                        if (candles[index]) {
+                            candles[index].style.opacity = '0.3';
+                            candles[index].style.transform = 'scale(0.8)';
+                        }
+                    };
+                }(i), i * 100);
+            }
+            
+            setTimeout(function() {
+                for (var i = 0; i < candles.length; i++) {
+                    if (candles[i]) {
+                        candles[i].style.opacity = '1';
+                        candles[i].style.transform = 'scale(1)';
+                    }
+                }
+            }, 2000);
+            
+            setTimeout(function() {
+                alert('🌟 Your wish has been sent to the birthday universe! 🌟');
+            }, 1500);
+        }
+
+        // Play/pause birthday song
+        function playBirthdaySong() {
+            if (!audioLoaded || !birthdayAudio) {
+                alert('🎵 Audio is still loading or not available. Please wait a moment!');
+                return;
+            }
+            
+            try {
+                if (birthdayAudio.paused) {
+                    birthdayAudio.play().catch(function(error) {
+                        alert('🎵 Could not play audio. Make sure Mygay.mp3 is in the same folder and try again!');
+                    });
+                } else {
+                    birthdayAudio.pause();
+                }
+            } catch (error) {
+                alert('🎵 Error playing audio file!');
+            }
+        }
+
+        // Initialize the birthday celebration
+        window.addEventListener('load', function() {
+            generateCandles();
+            initializeAudio();
+            
+            setInterval(launchFireworks, 10000);
+            
+            setTimeout(function() {
+                alert('🎉 Welcome to your interactive birthday celebration! 🎉\n\nClick the buttons to make wishes, launch fireworks, and play music!');
+            }, 1000);
+        });
+
+        // Add sparkle effects on mouse movement
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.9) {
+                var sparkle = document.createElement('div');
+                sparkle.style.position = 'fixed';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkle.style.width = '4px';
+                sparkle.style.height = '4px';
+                sparkle.style.background = '#fff';
+                sparkle.style.borderRadius = '50%';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.animation = 'explode 0.5s ease-out forwards';
+                sparkle.style.zIndex = '999';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(function() {
+                    if (sparkle.parentNode) {
+                        sparkle.parentNode.removeChild(sparkle);
+                    }
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
