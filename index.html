@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>🎉 Happy Birthday To My Gay Friend Yinka! 🎉</title>
     <style>
         * {
@@ -22,6 +22,7 @@
             align-items: center;
             justify-content: center;
             overflow-x: hidden;
+            padding: 10px;
         }
 
         @keyframes gradientShift {
@@ -35,32 +36,43 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 40px;
+            padding: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 600px;
-            margin: 20px;
+            width: 100%;
+            max-width: 400px;
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: 1.8em;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             animation: bounce 2s infinite;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 480px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            .birthday-container {
+                padding: 30px;
+                max-width: 500px;
+            }
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-30px); }
-            60% { transform: translateY(-15px); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
         }
 
         .age-display {
-            font-size: 2em;
+            font-size: 1.2em;
             color: #fff;
-            margin: 20px 0;
-            padding: 15px;
+            margin: 15px 0;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 15px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -70,17 +82,29 @@
             background: linear-gradient(45deg, #ff6b6b, #feca57);
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 1em;
+            border-radius: 25px;
             cursor: pointer;
-            margin: 20px 10px;
+            margin: 8px 5px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: calc(50% - 10px);
+            min-height: 44px;
+            touch-action: manipulation;
         }
 
-        .cake-button:hover {
-            transform: translateY(-3px);
+        @media (min-width: 480px) {
+            .cake-button {
+                width: auto;
+                padding: 15px 25px;
+                font-size: 1.1em;
+            }
+        }
+
+        .cake-button:hover,
+        .cake-button:active {
+            transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
@@ -125,36 +149,50 @@
 
         .birthday-message {
             color: white;
-            font-size: 1.3em;
-            margin: 20px 0;
-            line-height: 1.6;
+            font-size: 1em;
+            margin: 15px 0;
+            line-height: 1.5;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (min-width: 480px) {
+            .birthday-message {
+                font-size: 1.1em;
+            }
         }
 
         .candles {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
-            gap: 10px;
+            margin: 15px 0;
+            gap: 5px;
+            flex-wrap: wrap;
         }
 
         .candle {
-            width: 8px;
-            height: 40px;
+            width: 6px;
+            height: 30px;
             background: linear-gradient(to bottom, #ff6b6b, #feca57);
-            border-radius: 4px;
+            border-radius: 3px;
             position: relative;
             animation: flicker 1.5s infinite alternate;
+        }
+
+        @media (min-width: 480px) {
+            .candle {
+                width: 8px;
+                height: 35px;
+            }
         }
 
         .candle::before {
             content: '';
             position: absolute;
-            top: -8px;
+            top: -6px;
             left: 50%;
             transform: translateX(-50%);
-            width: 6px;
-            height: 8px;
+            width: 4px;
+            height: 6px;
             background: radial-gradient(circle, #ff6b35, #f7931e);
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
             animation: flame 1s infinite alternate;
@@ -172,15 +210,15 @@
 
         .wish-counter {
             color: white;
-            font-size: 1.1em;
-            margin-top: 15px;
+            font-size: 1em;
+            margin-top: 12px;
             opacity: 0.8;
         }
 
         .audio-status {
             color: white;
             font-size: 0.9em;
-            margin-top: 10px;
+            margin-top: 8px;
             opacity: 0.7;
         }
 
@@ -196,11 +234,12 @@
             align-items: center;
             z-index: 10000;
             flex-direction: column;
+            padding: 20px;
         }
 
         .photo-modal img {
-            max-width: 90%;
-            max-height: 80%;
+            max-width: 100%;
+            max-height: 70%;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
         }
@@ -214,15 +253,36 @@
             border-radius: 25px;
             cursor: pointer;
             font-size: 16px;
+            min-height: 44px;
+            touch-action: manipulation;
         }
 
         .error-message {
             text-align: center;
             color: white;
-            padding: 40px;
+            padding: 30px;
             background: rgba(255,255,255,0.1);
             border-radius: 15px;
             margin: 20px;
+        }
+
+        .button-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        /* iOS Safari fixes */
+        .cake-button {
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Prevent zoom on input focus */
+        input, select, textarea {
+            font-size: 16px;
         }
     </style>
 </head>
@@ -230,13 +290,9 @@
     <div class="fireworks" id="fireworks"></div>
     
     <div class="birthday-container">
-        <h1>🎉 HAPPY BIRTHDAY TO
-             MY GAY FRIEND 
-             YINKA! 🎉</h1>
+        <h1>🎉 HAPPY BIRTHDAY TO MY GAY FRIEND YINKA! 🎉</h1>
         
-        <div class="candles" id="candles">
-           
-        </div>
+        <div class="candles" id="candles"></div>
         
         <div class="age-display" id="ageDisplay">
             Another year of awesomeness! 🌟
@@ -248,18 +304,19 @@
             <p>You're not getting older, you're getting better! Get a man this year If you don't want to identify as GAY ✨</p>
         </div>
         
-       
-        <button class="cake-button" onclick="showPhoto()">📸 View Photo!</button>
-        <button class="cake-button" onclick="makeWish()">🎂 Make a Wish sharp sharp!</button>
-        <button class="cake-button" onclick="launchFireworks()">🎆 Celebrate!</button>
-        <button class="cake-button" id="songButton" onclick="playBirthdaySong()">🎵 Birthday Song</button>
+        <div class="button-grid">
+            <button class="cake-button" onclick="showPhoto()">📸 View Photo!</button>
+            <button class="cake-button" onclick="makeWish()">🎂 Make a Wish!</button>
+            <button class="cake-button" onclick="launchFireworks()">🎆 Celebrate!</button>
+            <button class="cake-button" id="songButton" onclick="playBirthdaySong()">🎵 Birthday Song</button>
+        </div>
         
         <div class="wish-counter" id="wishCounter">
             Wishes made: 0 ✨
         </div>
         
         <div class="audio-status" id="audioStatus">
-            Ready to play music! 🎶
+            Tap to enable audio! 🎶
         </div>
     </div>
 
@@ -267,19 +324,93 @@
         let wishCount = 0;
         let birthdayAudio = null;
         let audioLoaded = false;
+        let audioContext = null;
+        let userInteracted = false;
 
-        // Simple test function
-        function testFunction() {
-            alert('JavaScript is working perfectly!');
+        // Initialize audio with iOS compatibility
+        function initializeAudio() {
+            try {
+                birthdayAudio = new Audio();
+                birthdayAudio.src = 'Mygay.mp3';
+                birthdayAudio.preload = 'metadata';
+                birthdayAudio.loop = false;
+                
+                // Set up audio event listeners
+                birthdayAudio.addEventListener('canplaythrough', function() {
+                    audioLoaded = true;
+                    if (userInteracted) {
+                        document.getElementById('audioStatus').innerHTML = 'Audio ready! 🎶';
+                        document.getElementById('songButton').disabled = false;
+                    }
+                });
+                
+                birthdayAudio.addEventListener('error', function(e) {
+                    console.log('Audio error:', e);
+                    document.getElementById('audioStatus').innerHTML = 'Audio file not found. Make sure Mygay.mp3 is in the same folder! ⚠️';
+                    document.getElementById('songButton').disabled = true;
+                });
+                
+                birthdayAudio.addEventListener('ended', function() {
+                    document.getElementById('songButton').innerHTML = '🎵 Play Again';
+                    document.getElementById('audioStatus').innerHTML = 'Song finished! 🎶';
+                });
+                
+                birthdayAudio.addEventListener('play', function() {
+                    document.getElementById('songButton').innerHTML = '⏸️ Pause Song';
+                    document.getElementById('audioStatus').innerHTML = 'Now playing your birthday song! 🎵';
+                });
+                
+                birthdayAudio.addEventListener('pause', function() {
+                    document.getElementById('songButton').innerHTML = '▶️ Resume Song';
+                    document.getElementById('audioStatus').innerHTML = 'Song paused 🎶';
+                });
+                
+            } catch (error) {
+                console.log('Error initializing audio:', error);
+                document.getElementById('audioStatus').innerHTML = 'Error loading audio ❌';
+            }
         }
 
-        // Show photo function - simple and clean
+        // Enable audio context for iOS
+        function enableAudioContext() {
+            if (!userInteracted) {
+                userInteracted = true;
+                
+                // Try to create and resume audio context for iOS
+                try {
+                    if (typeof(AudioContext) !== "undefined") {
+                        audioContext = new AudioContext();
+                    } else if (typeof(webkitAudioContext) !== "undefined") {
+                        audioContext = new webkitAudioContext();
+                    }
+                    
+                    if (audioContext && audioContext.state === 'suspended') {
+                        audioContext.resume();
+                    }
+                } catch (e) {
+                    console.log('AudioContext not available');
+                }
+                
+                // Load the audio after user interaction
+                if (birthdayAudio && audioLoaded) {
+                    document.getElementById('audioStatus').innerHTML = 'Audio ready! 🎶';
+                    document.getElementById('songButton').disabled = false;
+                } else {
+                    document.getElementById('audioStatus').innerHTML = 'Loading audio... 🎶';
+                }
+            }
+        }
+
+        // Show photo function
         function showPhoto() {
+            enableAudioContext();
+            
             var modal = document.createElement('div');
             modal.className = 'photo-modal';
             
             var img = document.createElement('img');
             img.src = 'yinka_photo.jpg';
+            img.alt = 'Yinka Birthday Photo';
             
             var closeBtn = document.createElement('button');
             closeBtn.className = 'close-btn';
@@ -310,47 +441,10 @@
             document.body.appendChild(modal);
         }
 
-        // Initialize audio
-        function initializeAudio() {
-            try {
-                birthdayAudio = new Audio('Mygay.mp3');
-                birthdayAudio.preload = 'auto';
-                
-                birthdayAudio.addEventListener('canplaythrough', function() {
-                    audioLoaded = true;
-                    document.getElementById('audioStatus').innerHTML = 'Audio ready! 🎶';
-                    document.getElementById('songButton').disabled = false;
-                });
-                
-                birthdayAudio.addEventListener('error', function(e) {
-                    document.getElementById('audioStatus').innerHTML = 'Audio file not found. Make sure Mygay.mp3 is in the same folder! ⚠️';
-                    document.getElementById('songButton').disabled = true;
-                });
-                
-                birthdayAudio.addEventListener('ended', function() {
-                    document.getElementById('songButton').innerHTML = '🎵 Play Again';
-                    document.getElementById('audioStatus').innerHTML = 'Song finished! 🎶';
-                });
-                
-                birthdayAudio.addEventListener('play', function() {
-                    document.getElementById('songButton').innerHTML = '⏸️ Pause Song';
-                    document.getElementById('audioStatus').innerHTML = 'Now playing your birthday song! 🎵';
-                });
-                
-                birthdayAudio.addEventListener('pause', function() {
-                    document.getElementById('songButton').innerHTML = '▶️ Resume Song';
-                    document.getElementById('audioStatus').innerHTML = 'Song paused 🎶';
-                });
-                
-            } catch (error) {
-                document.getElementById('audioStatus').innerHTML = 'Error loading audio ❌';
-            }
-        }
-
-        // Generate random number of candles
+        // Generate candles
         function generateCandles() {
             var candleContainer = document.getElementById('candles');
-            var numCandles = Math.floor(Math.random() * 40) + 10;
+            var numCandles = Math.floor(Math.random() * 20) + 10; // Fewer candles for mobile
             
             for (var i = 0; i < numCandles; i++) {
                 var candle = document.createElement('div');
@@ -359,15 +453,17 @@
                 candleContainer.appendChild(candle);
             }
             
-            document.getElementById('ageDisplay').innerHTML = '🎂  Candles! 🎂';
+            document.getElementById('ageDisplay').innerHTML = '🎂 ' + numCandles + ' Candles! 🎂';
         }
 
         // Create fireworks effect
         function launchFireworks() {
+            enableAudioContext();
+            
             var fireworksContainer = document.getElementById('fireworks');
             var colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff'];
             
-            for (var i = 0; i < 20; i++) {
+            for (var i = 0; i < 15; i++) { // Fewer fireworks for mobile performance
                 setTimeout(function() {
                     var firework = document.createElement('div');
                     firework.className = 'firework';
@@ -389,6 +485,8 @@
 
         // Make a wish function
         function makeWish() {
+            enableAudioContext();
+            
             wishCount++;
             document.getElementById('wishCounter').innerHTML = 'Wishes made: ' + wishCount + ' ✨';
             
@@ -401,7 +499,7 @@
                             candles[index].style.transform = 'scale(0.8)';
                         }
                     };
-                }(i), i * 100);
+                }(i), i * 50);
             }
             
             setTimeout(function() {
@@ -418,47 +516,63 @@
             }, 1500);
         }
 
-        // Play/pause birthday song
+        // Play/pause birthday song with iOS compatibility
         function playBirthdaySong() {
-            if (!audioLoaded || !birthdayAudio) {
-                alert('🎵 Audio is still loading or not available. Please wait a moment!');
+            enableAudioContext();
+            
+            if (!birthdayAudio) {
+                alert('🎵 Audio not initialized. Please try again!');
                 return;
             }
             
             try {
                 if (birthdayAudio.paused) {
-                    birthdayAudio.play().catch(function(error) {
-                        alert('🎵 Could not play audio. Make sure Mygay.mp3 is in the same folder and try again!');
-                    });
+                    var playPromise = birthdayAudio.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise.then(function() {
+                            // Audio started successfully
+                        }).catch(function(error) {
+                            console.log('Play failed:', error);
+                            alert('🎵 Could not play audio. Make sure Mygay.mp3 is in the same folder and try tapping again!');
+                        });
+                    }
                 } else {
                     birthdayAudio.pause();
                 }
             } catch (error) {
+                console.log('Error playing audio:', error);
                 alert('🎵 Error playing audio file!');
             }
         }
 
-        // Initialize the birthday celebration
+        // Initialize everything
         window.addEventListener('load', function() {
             generateCandles();
             initializeAudio();
             
-            setInterval(launchFireworks, 10000);
+            // Less frequent fireworks for mobile battery life
+            setInterval(launchFireworks, 15000);
             
             setTimeout(function() {
-                alert('🎉 Welcome to your interactive birthday celebration! 🎉\n\nClick the buttons to make wishes, launch fireworks, and play music!');
+                alert('🎉 Welcome to your mobile birthday celebration! 🎉\n\nTap any button to enable audio and interact with the page!');
             }, 1000);
         });
 
-        // Add sparkle effects on mouse movement
-        document.addEventListener('mousemove', function(e) {
-            if (Math.random() > 0.9) {
+        // Add touch event listeners for better mobile interaction
+        document.addEventListener('touchstart', enableAudioContext, { once: true });
+        document.addEventListener('click', enableAudioContext, { once: true });
+
+        // Reduced sparkle effects for mobile performance
+        document.addEventListener('touchmove', function(e) {
+            if (Math.random() > 0.95) {
+                var touch = e.touches[0];
                 var sparkle = document.createElement('div');
                 sparkle.style.position = 'fixed';
-                sparkle.style.left = e.clientX + 'px';
-                sparkle.style.top = e.clientY + 'px';
-                sparkle.style.width = '4px';
-                sparkle.style.height = '4px';
+                sparkle.style.left = touch.clientX + 'px';
+                sparkle.style.top = touch.clientY + 'px';
+                sparkle.style.width = '3px';
+                sparkle.style.height = '3px';
                 sparkle.style.background = '#fff';
                 sparkle.style.borderRadius = '50%';
                 sparkle.style.pointerEvents = 'none';
@@ -474,6 +588,16 @@
                 }, 500);
             }
         });
+
+        // Prevent iOS zoom on double tap
+        var lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     </script>
 </body>
 </html>
